@@ -56,7 +56,6 @@ function App() {
                 />
               </Route>
             </Routes>
-      	    <Route path="*" element={<NotFoundPage />} />
           </SelectedBooksProvider>
         </BooksProvider>
       </UserProvider>
