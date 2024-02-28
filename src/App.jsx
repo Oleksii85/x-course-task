@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Routes, Route, Navigate, BrowserRouter } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { ErrorBoundary } from "react-error-boundary";
 import { LocalStorageService, LS_KEYS } from "./services/localStorage";
 import { UserProvider } from "./hooks/use-user";
@@ -28,54 +28,48 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter basename="/x-course-task">
-      <ErrorBoundary>
-        <UserProvider value={{ user, setUser }}>
-          <BooksProvider value={{ books }}>
-            <SelectedBooksProvider value={{ selectedBooks, setSelectedBooks }}>
-              <Routes>
-                <Route path="/" element={<Layout />}>
-								<Route path="sign-in" element={<Signin />} />
-								<Route
-									index
-									element={
-										isAuthenticatedUser ? (
-											<Navigate to="book-list" />
-										) : (
-											<Navigate to="sign-in" />
-										)
-									}
-								/>
-								<Route
-									path="book-list"
-									element={
-										isAuthenticatedUser ? <Booklist /> : <Navigate to="/" />
-									}
-								/>
-								<Route
-									path="specific-book/:id"
-									element={
-										isAuthenticatedUser ? (
-											<Specificbook />
-										) : (
-											<Navigate to="/" />
-										)
-									}
-								/>
-								<Route
-									path="cart-screen"
-									element={
-										isAuthenticatedUser ? <Cartscreen /> : <Navigate to="/" />
-									}
-								/>
-								<Route path="*" element={<NotFoundPage />} />
-                </Route>
-              </Routes>
-            </SelectedBooksProvider>
-          </BooksProvider>
-        </UserProvider>
-      </ErrorBoundary>
-    </BrowserRouter>
+    <ErrorBoundary>
+      <UserProvider value={{ user, setUser }}>
+        <BooksProvider value={{ books }}>
+          <SelectedBooksProvider value={{ selectedBooks, setSelectedBooks }}>
+            <Routes>
+              <Route path="/" element={<Layout />}>
+                <Route path="sign-in" element={<Signin />} />
+                <Route
+                  index
+                  element={
+                    isAuthenticatedUser ? (
+                      <Navigate to="book-list" />
+                    ) : (
+                      <Navigate to="sign-in" />
+                    )
+                  }
+                />
+                <Route
+                  path="book-list"
+                  element={
+                    isAuthenticatedUser ? <Booklist /> : <Navigate to="/" />
+                  }
+                />
+                <Route
+                  path="specific-book/:id"
+                  element={
+                    isAuthenticatedUser ? <Specificbook /> : <Navigate to="/" />
+                  }
+                />
+                <Route
+                  path="cart-screen"
+                  element={
+                    isAuthenticatedUser ? <Cartscreen /> : <Navigate to="/" />
+                  }
+                />
+                <Route path="*" element={<NotFoundPage />} />
+              </Route>
+            </Routes>
+          </SelectedBooksProvider>
+        </BooksProvider>
+      </UserProvider>
+    </ErrorBoundary>
   );
 }
 
