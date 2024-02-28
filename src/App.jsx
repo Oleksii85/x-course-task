@@ -55,8 +55,8 @@ function App() {
                   }
                 />
               </Route>
-              <Route path="*" element={<NotFoundPage />} />
             </Routes>
+						<Route path="*" element={<NotFoundPage />} />
           </SelectedBooksProvider>
         </BooksProvider>
       </UserProvider>
