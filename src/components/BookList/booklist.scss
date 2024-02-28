@@ -1,0 +1,220 @@
+.block-search-sort {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 10px;
+
+  .search-books {
+    flex: 1 1 auto;
+    max-width: 420px;
+    border: 1.5px solid #383838;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .input-search-book {
+      flex: 1 1 auto;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 2px 5px;
+    }
+
+    .book-search {
+      padding: 2px 8px;
+      background-color: inherit;
+    }
+
+    & img {
+      width: 120%;
+      height: 120%;
+      transition: all 0.4s ease 0s;
+    }
+  }
+  .sort-books {
+    & #sortBook {
+      border: 1.5px solid #383838;
+      border-radius: 5px;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 8px;
+      margin: 10px;
+    }
+  }
+}
+
+.list-book-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 0px 20px;
+  margin-bottom: 20px;
+
+  .book-item {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    height: 485px;
+    border: 1.5px solid #000;
+		border-radius: 4px;
+    padding: 10px;
+		background-color: #ececec;
+    margin: 15px;
+
+    .item-img {
+      flex: 1 1 auto;
+      margin: 10px 0;
+      text-align: center;
+			line-height: 328px;
+
+      .item-img-image {
+        max-width: 250px;
+    		max-height: 328px;
+				border-radius: 5px;
+				width: auto;
+				height: auto;
+				object-fit: cover;
+				vertical-align: middle;
+      }
+    }
+
+    .book-item-block {
+      margin: 6px 8px 8px 8px;
+      text-align: left;
+
+      .book-item-title {
+        .item-title {
+          font-size: 18px;
+					line-height: 130%;
+          font-weight: 600;
+          margin-bottom: 8px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+
+      .book-item-author {
+        .item-author {
+          font-size: 16px;
+          margin-bottom: 8px;
+					line-height: 130%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+
+      .book-item-price {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .item-price {
+          font-size: 18px;
+          font-weight: 600;
+        }
+
+        .item-btn {
+          font-size: 16px;
+          font-weight: 500;
+          padding: 4px 20px;
+          background-color: #8bb0fe;
+          color: #000;
+          text-align: center;
+          border: 1px solid #3e3e3e;
+          border-radius: 5px;
+          transition: all 0.4s ease 0s;
+        }
+
+        .item-btn:hover {
+          color: #fff;
+          background-color: #3a4afc8c;
+        }
+      }
+    }
+  }
+
+  .book-item.hidden {
+    display: none;
+  }
+}
+
+/* --------------@MEDIA--------------------------------------------- */
+
+@media (max-width: 426px) {
+  .block-search-sort {
+    justify-content: center;
+
+		.search-books {
+			flex: 0 0 auto;
+    	margin: 10px;
+    	min-width: 350px;
+		}
+
+		.sort-books {
+			#sortBook {
+				margin: 10px;
+    		min-width: 350px;
+			}
+		}
+  }
+}
+
+@media (max-width: 376px) {
+  .block-search-sort {
+		padding-bottom: 5px;
+
+		.search-books {
+    	min-width: 300px;
+		}
+
+		.sort-books {
+			#sortBook {
+    		min-width: 300px;
+				margin: 5px 0 0 0;
+			}
+		}
+  }
+
+	.list-book-container {
+		
+		.book-item {
+			padding: 5px;
+			margin: 10px;
+			width: 300px;
+			height: 410px;
+
+			.item-img {
+				line-height: 265px;
+
+				.item-img-image {
+					max-width: 202px;
+    			max-height: 265px;
+				}
+			}
+
+			.book-item-block {
+				margin: 6px 8px 8px 8px;
+				text-align: left;
+
+				.book-item-title {
+					.item-title {
+						font-size: 16px;
+						font-weight: 500;
+						margin-bottom: 8px;
+					}
+				}
+
+				.book-item-author {
+					.item-author {
+						font-size: 14px;
+					}
+				}
+			}
+		}
+	}
+}
