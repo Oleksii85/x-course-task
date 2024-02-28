@@ -16,7 +16,7 @@ export default function Signin() {
 		event.preventDefault();
 		LocalStorageService.set(LS_KEYS.USER, userName);
 		setUser(userName);
-		navigate("book-list");
+		navigate("/");
 	};
 
   const inputRef = useRef(null);
