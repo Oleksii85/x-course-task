@@ -78,6 +78,13 @@
 				height: auto;
 				object-fit: cover;
 				vertical-align: middle;
+				transition: all 0.4s ease 0s;
+      }
+
+			.item-img-image:hover {
+        background-color: #707bf98C;
+				box-shadow: 0px 0px 12px 8px #7882fca1;
+				border-radius: 10px;
       }
     }
 
