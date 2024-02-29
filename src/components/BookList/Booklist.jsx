@@ -69,13 +69,22 @@ export default function Booklist() {
             filteredBooks.map((book) => (
               <div className="book-item" key={book.id}>
                 <div className="item-img">
-                  <Link to={`/specific-book/${book.id}`}>
+                  {book.image.length === 0 ? (
                     <img
-                      src={book.image.length === 0 ? imageNotFound : book.image}
+                      src={imageNotFound}
                       alt={book.title}
                       className="item-img-image"
+                      style={{ pointerEvents: "none" }}
                     />
-                  </Link>
+                  ) : (
+                    <Link to={`/specific-book/${book.id}`}>
+                      <img
+                        src={book.image}
+                        alt={book.title}
+                        className="item-img-image"
+                      />
+                    </Link>
+                  )}
                 </div>
                 <div className="book-item-block">
                   <div className="book-item-title">

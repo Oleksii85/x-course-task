@@ -35,7 +35,7 @@ export default function Header() {
       <header>
         <div className="header-container">
           <Link to="book-list" className="header-link">
-            X-course task / Baiev Oleksii
+            X-course-task / Baiev Oleksii
           </Link>
           <nav className="nav-menu">
             <ul className="menu-list">
