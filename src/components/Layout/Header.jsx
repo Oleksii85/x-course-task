@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
-import { LocalStorageService, LS_KEYS } from "../../services/localStorage";
+import { LocalStorageService } from "../../services/localStorage";
 import { useUser } from "../../hooks/use-user";
 import { useSelectedBooks } from "../../hooks/use-selected-books";
 import cart from "../../images/icons/cart.svg";
@@ -14,9 +14,8 @@ export default function Header() {
 	
 
   const handleSignOut = () => {
-    LocalStorageService.remove(LS_KEYS.USER);
+    LocalStorageService.clearAll();
     setUser(null);
-		LocalStorageService.remove(LS_KEYS.SELECTED_BOOKS);
     setSelectedBooks([]);
   };
 

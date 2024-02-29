@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useSelectedBooks } from "../../hooks/use-selected-books";
 import { LocalStorageService, LS_KEYS } from "../../services/localStorage";
 import cart from "../../images/icons/cart.svg";
+import xmark from "../../images/icons/xmark.svg";
 import "./cartscreen.scss";
 
 export default function Cartscreen() {
@@ -22,6 +23,12 @@ export default function Cartscreen() {
     setTotal(totalBooksPrice.toFixed(2));
   }, [selectedBooks]);
 
+	const handleRemoveBook = (bookId) => {
+  	const notRemovedBooks = selectedBooks.filter((book) => book.id !== bookId);
+		LocalStorageService.set(LS_KEYS.SELECTED_BOOKS, notRemovedBooks);
+		setSelectedBooks(notRemovedBooks);
+	};
+
 	useEffect(() => {
     changeTotalPrice();
   });
@@ -40,7 +47,7 @@ export default function Cartscreen() {
               Purchase
             </button>
           </div>
-          {!selectedBooks.length < 1 ? (
+          {selectedBooks.length > 0 ? (
             <div className="block-cart-books">
               <div className="cart-books-head">
                 <div className="books-head-title">Title</div>
@@ -65,7 +72,16 @@ export default function Cartscreen() {
                     $ <span id="countBook">{book.price}</span>
                   </div>
                   <div className="book-total-price">
-                    $ <span id="priceBook">{(book.count * book.price).toFixed(2)}</span>
+                    ${" "}
+                    <span id="priceBook">
+                      {(book.count * book.price).toFixed(2)}
+                    </span>
+                    <span
+                      onClick={() => handleRemoveBook(book.id)}
+                      style={{ cursor: "pointer" }}
+                    >
+                      <img src={xmark} alt="remove" />
+                    </span>
                   </div>
                 </div>
               ))}
