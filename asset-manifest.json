@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "/x-course-task/static/css/main.0034f270.css",
-    "main.js": "/x-course-task/static/js/main.8603e820.js",
+    "main.css": "/x-course-task/static/css/main.ddb23801.css",
+    "main.js": "/x-course-task/static/js/main.1241f9c6.js",
     "static/media/avatar.png": "/x-course-task/static/media/avatar.0d14c6999b4a5c8e86a7.png",
     "static/media/imageNotFound.png": "/x-course-task/static/media/imageNotFound.298b98203c3825c61303.png",
     "static/media/cart.svg": "/x-course-task/static/media/cart.5a1c3c755c07e59db7d65be6bc8d8bfb.svg",
-    "static/media/search.svg": "/x-course-task/static/media/search.f1aa2ae9bd73ab19e2f9dbc5be582951.svg",
     "index.html": "/x-course-task/index.html",
-    "main.0034f270.css.map": "/x-course-task/static/css/main.0034f270.css.map",
-    "main.8603e820.js.map": "/x-course-task/static/js/main.8603e820.js.map"
+    "static/media/xmark.svg": "/x-course-task/static/media/xmark.6b0318b4a7448f45690011abc57fe051.svg",
+    "static/media/search.svg": "/x-course-task/static/media/search.f1aa2ae9bd73ab19e2f9dbc5be582951.svg",
+    "main.ddb23801.css.map": "/x-course-task/static/css/main.ddb23801.css.map",
+    "main.1241f9c6.js.map": "/x-course-task/static/js/main.1241f9c6.js.map"
   },
   "entrypoints": [
-    "static/css/main.0034f270.css",
-    "static/js/main.8603e820.js"
+    "static/css/main.ddb23801.css",
+    "static/js/main.1241f9c6.js"
   ]
 }
