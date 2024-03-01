@@ -34,31 +34,31 @@ function App() {
           <SelectedBooksProvider value={{ selectedBooks, setSelectedBooks }}>
             <Routes>
               <Route path="/" element={<Layout />}>
-                <Route path="sign-in" element={<Signin />} />
                 <Route
                   index
                   element={
-                    isAuthenticatedUser ? (
-                      <Navigate to="book-list" />
-                    ) : (
-                      <Navigate to="sign-in" />
-                    )
-                  }
+										isAuthenticatedUser ? (
+											<Navigate to="/book-list" />
+											) : (
+												<Navigate to="/sign-in" />
+												)
+											}
                 />
+								<Route path="/sign-in" element={<Signin />} />
                 <Route
-                  path="book-list"
+                  path="/book-list"
                   element={
                     isAuthenticatedUser ? <Booklist /> : <Navigate to="/" />
                   }
                 />
                 <Route
-                  path="specific-book/:id"
+                  path="/specific-book/:id"
                   element={
                     isAuthenticatedUser ? <Specificbook /> : <Navigate to="/" />
                   }
                 />
                 <Route
-                  path="cart-screen"
+                  path="/cart-screen"
                   element={
                     isAuthenticatedUser ? <Cartscreen /> : <Navigate to="/" />
                   }
