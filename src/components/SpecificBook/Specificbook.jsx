@@ -54,9 +54,11 @@ export default function Specificbook() {
     setCount((prevCount) => validateCount(prevCount + 1));
   };
 
+	const calculateTotalPrice = () => book.price * count;
+
   useEffect(() => {
     if (book) {
-      const newTotalPrice = book.price * count;
+      const newTotalPrice = calculateTotalPrice();
       setTotalPrice(newTotalPrice.toFixed(2));
     }
   }, [count, book]);
@@ -95,7 +97,9 @@ export default function Specificbook() {
               <div className="book-price-container">
                 <div className="price">
                   <p>Price, $</p>
-                  <span id="priceBook">{book.price}</span>
+                  <span id="priceBook" data-testid="Price">
+                    {book.price}
+                  </span>
                 </div>
                 <div className="count">
                   <p>Count</p>
@@ -132,7 +136,9 @@ export default function Specificbook() {
                 </div>
                 <div className="total-price">
                   <p>Total price, $</p>
-                  <span id="totalPrice">{totalPrice}</span>
+                  <span id="totalPrice" data-testid="total-price">
+                    {totalPrice}
+                  </span>
                 </div>
                 <div className="btn-add-to-cart">
                   <button

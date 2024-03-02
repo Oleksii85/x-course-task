@@ -1,6 +1,6 @@
 {
   "name": "x-course-task",
-	"homepage": "https://Oleksii85.github.io/x-course-task",
+  "homepage": "https://Oleksii85.github.io/x-course-task",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -19,7 +19,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-		"predeploy": "npm run build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
