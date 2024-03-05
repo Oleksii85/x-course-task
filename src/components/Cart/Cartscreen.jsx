@@ -40,7 +40,7 @@ export default function Cartscreen() {
           <div className="block-btn-purchase">
             <button
               type="submit"
-              className="btn-purchase"
+              id="btn-purchase"
               disabled={selectedBooks.length < 1}
               onClick={handlePurchase}
             >
@@ -60,7 +60,7 @@ export default function Cartscreen() {
                   <div className="cart-books">
                     <Link
                       to={`../specific-book/${book.id}`}
-                      className="book-title"
+                      id="book-title"
                     >
                       {book.title}
                     </Link>

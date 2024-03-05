@@ -76,4 +76,13 @@ describe("Specificbook", () => {
 
     expect(totalPrice.textContent).toBe("109.90");
   });
+
+	// test("Adding a book to the cart", () => {
+  //   render(<Specificbook />);
+  //   const addCartButton = screen.getByTestId("button-add-card");
+
+  //   userEvent.click(addCartButton);
+
+  //   expect(selectedBooks.length).toBe(0);
+  // });
 });

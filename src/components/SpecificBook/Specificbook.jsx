@@ -61,7 +61,7 @@ export default function Specificbook() {
       const newTotalPrice = calculateTotalPrice();
       setTotalPrice(newTotalPrice.toFixed(2));
     }
-  }, [count, book]);
+  }, [count, book, calculateTotalPrice]);
 
   useEffect(() => {
     if (inputRef.current) {
@@ -144,6 +144,7 @@ export default function Specificbook() {
                   <button
                     type="submit"
                     id="buttonAddCard"
+                    data-testid="button-add-card"
                     onClick={handleAddToCart}
                   >
                     Add to Cart

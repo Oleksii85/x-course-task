@@ -42,12 +42,15 @@ export default function Header() {
                 <Link to="/cart-screen">
                   <img src={cart} id="cart" alt="cart" />
                 </Link>
-                {totalCount > 0 && <div className="cart-count">{totalCount}</div>}
+                {totalCount > 0 && (
+                  <div className="cart-count">{totalCount}</div>
+                )}
               </li>
               <li className="list-btn-signout">
                 <Link to="/">
                   <button
                     type="submit"
+                    id="button-signout"
                     className="btn-signout"
                     onClick={handleSignOut}
                   >

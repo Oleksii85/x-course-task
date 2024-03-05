@@ -18,12 +18,7 @@
 		color: #000;
 		transition: all 0.4s ease 0s;
 	}
-
-	.header-link:hover {
-		background-color: #707bf98C;
-		box-shadow: 0px 0px 12px 8px #7882fca1;
-		border-radius: 10px;
-	}
+	
 	.nav-menu {
 		.menu-list {
 			display: flex;
@@ -40,12 +35,6 @@
 					transition: all 0.4s ease 0s;
 				}
 
-				& #cart:hover {
-					background-color: #707bf98C;
-					box-shadow: 0px 0px 12px 8px #7882fca1;
-					border-radius: 10px;
-				}
-
 				& .cart-count {
 					width: 19px;
 					height: 19px;
@@ -55,7 +44,7 @@
 					text-align: center;
 					font-size: 10px;
 					font-weight: 700;
-					background-color: #d1ff88;
+					background-color: #F2CB05;
 					margin: 0px 0px -1.5px -18px;
 				}
 			}
@@ -63,7 +52,7 @@
 			.list-btn-signout {
 				margin-right: 15px;
 
-				.btn-signout {
+				#button-signout {
 					text-align: center;
 					border: 1px solid #3e3e3e;
 					border-radius: 5px;
@@ -73,11 +62,6 @@
 					color: #454545;
 					background-color: #99c4ca;
 					transition: all 0.3s ease 0s;
-				}
-
-				.btn-signout:hover {
-					color: #fff;
-					background-color: #3a4afc8c;
 				}
 			}
 
@@ -124,6 +108,56 @@
 			font-size: 18px;
 			font-weight: 500;
 			text-align: center;
+		}
+	}
+}
+
+@media (hover:hover){
+	.header-link:hover {
+		background-color: #707bf98C;
+		box-shadow: 0px 0px 12px 8px #7882fca1;
+		border-radius: 10px;
+	}
+
+	#cart:hover {
+		background-color: #707bf98C;
+		box-shadow: 0px 0px 12px 8px #7882fca1;
+		border-radius: 10px;
+	}
+
+	.nav-menu {
+		.menu-list {
+			.list-btn-signout {
+				#button-signout:hover {
+					color: #fff;
+					background-color: #3a4afc8c;
+				}
+			}
+		}
+	}
+}
+
+@media (hover:none){
+	.header-link:active {
+		background-color: #707bf98C;
+		box-shadow: 0px 0px 12px 8px #7882fca1;
+		border-radius: 10px;
+	}
+
+	#cart:active {
+		background-color: #707bf98C;
+		box-shadow: 0px 0px 12px 8px #7882fca1;
+		border-radius: 10px;
+	}
+
+	.nav-menu {
+		.menu-list {
+			.list-btn-signout {
+				#button-signout:active {
+					color: #fff;
+					background-color: #3a4afc8c;
+				}
+			}
 		}
 	}
 }

@@ -94,11 +94,6 @@
             cursor: not-allowed;
           }
 
-          .btn-minus:hover {
-            color: #fff;
-            background-color: #3a4afc8c;
-          }
-
           .input-count {
             border: 1px solid #383838;
             border-radius: 8px;
@@ -134,11 +129,6 @@
             opacity: 0.5;
             cursor: not-allowed;
           }
-
-          .btn-plus:hover {
-            color: #fff;
-            background-color: #3a4afc8c;
-          }
         }
       }
 
@@ -163,11 +153,6 @@
           border: 1px solid #3e3e3e;
           border-radius: 5px;
           transition: all 0.4s ease 0s;
-        }
-
-        & button:hover {
-          color: #fff;
-          background-color: #3a4afc8c;
         }
       }
     }
@@ -217,6 +202,60 @@
 
         & button {
           min-width: 220px;
+        }
+      }
+    }
+  }
+}
+
+@media (hover:hover){
+	.book-container {
+    .book-price-container {
+      .count {
+        .count-block {
+          .btn-minus:hover {
+            color: #fff;
+            background-color: #3a4afc8c;
+          }
+
+          .btn-plus:hover {
+            color: #fff;
+            background-color: #3a4afc8c;
+          }
+        }
+      }
+
+      .btn-add-to-cart {
+        & button:hover {
+          color: #fff;
+          background-color: #3a4afc8c;
+        }
+      }
+    }
+  }
+}
+
+@media (hover:none){
+	.book-container {
+    .book-price-container {
+      .count {
+        .count-block {
+          .btn-minus:active {
+            color: #fff;
+            background-color: #3a4afc8c;
+          }
+
+          .btn-plus:active {
+            color: #fff;
+            background-color: #3a4afc8c;
+          }
+        }
+      }
+
+      .btn-add-to-cart {
+        & button:active {
+          color: #fff;
+          background-color: #3a4afc8c;
         }
       }
     }
