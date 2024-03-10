@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { useParams } from "react-router-dom";
 import { useBooks } from "../../hooks/use-books";
 import { useSelectedBooks } from "../../hooks/use-selected-books";
@@ -15,7 +15,7 @@ export default function Specificbook() {
   const [count, setCount] = useState(1);
   const [totalPrice, setTotalPrice] = useState(book ? book.price : 0);
 
-  const handleAddToCart = () => {
+  const handleAddToCart = useCallback(() => {
     const cart = [...selectedBooks];
     const existingBook = selectedBooks.find((item) => item.id === book.id);
     existingBook
@@ -28,7 +28,7 @@ export default function Specificbook() {
         });
     LocalStorageService.set(LS_KEYS.SELECTED_BOOKS, cart);
     setSelectedBooks(cart);
-  };
+  }, [selectedBooks, book, count, setSelectedBooks]);
 
   const validateCount = (countBooks) => {
     if (isNaN(countBooks)) {
@@ -46,13 +46,13 @@ export default function Specificbook() {
     setCount(newCount);
   };
 
-  const handleValueMinus = () => {
+	const handleValueMinus = useCallback(() => {
     setCount((prevCount) => validateCount(prevCount - 1));
-  };
+  }, []);
 
-  const handleValuePlus = () => {
+  const handleValuePlus = useCallback(() => {
     setCount((prevCount) => validateCount(prevCount + 1));
-  };
+  }, []);
 
 	const calculateTotalPrice = () => book.price * count;
 
@@ -64,9 +64,13 @@ export default function Specificbook() {
   }, [count, book, calculateTotalPrice]);
 
   useEffect(() => {
-    if (inputRef.current) {
+    if (inputRef.current && window.innerWidth >= 870) {
       inputRef.current.focus();
     }
+  }, []);
+
+	useEffect(() => {
+    window.scrollTo(0, 0);
   }, []);
 
   return (

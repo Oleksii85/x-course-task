@@ -22,6 +22,20 @@ body {
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	height: 100%;
 	margin: 0;
+	overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+	background-color: #3c3c3c;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #f2cb055e;
+}
+
+* {
+	scrollbar-color: #F2CB05 #3c3c3c;
+	scrollbar-width: thin;
 }
 
 #root {

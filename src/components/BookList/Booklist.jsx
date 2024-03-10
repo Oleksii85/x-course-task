@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useBooks } from "../../hooks/use-books";
 import searchImage from "../../images/icons/search.svg";
@@ -9,6 +9,10 @@ export default function Booklist() {
   const { books } = useBooks();
   const [filterTitle, setFilterTitle] = useState("");
   const [filterPrice, setFilterPrice] = useState("all");
+
+	useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleFilterTitleChange = (event) => {
     setFilterTitle(event.target.value);
